@@ -7131,7 +7131,7 @@ footer .tiny-border span {
 }
 
 .gradient-edge-top.color{
-  background: linear-gradient(180deg, rgba(var(--secondary-color-rgb), 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+  background: linear-gradient(180deg, rgba(17,17,17, 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
 }
 
 .gradient-edge-bottom.color{
