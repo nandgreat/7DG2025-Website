@@ -124,10 +124,10 @@ Table of content:
   --bg-color-even: #E8E8E8;
   --bg-color-odd: #F4F4F4;
   --bg-light: #F8F9FA;
-  --bg-dark-1: #101435;
+  --bg-dark-1: #000000;
   --bg-dark-2: #1A1E42;
   --bg-dark-3: #1e1e1e;  
-  --bg-dark-1-rgb: 16, 20, 53;
+  --bg-dark-1-rgb: 0, 0, 0;
   --bg-grey: #eeeeee;
   --bg-gradient-1: 0deg, rgba(var(--primary-color-rgb), .1) 0%, rgba(var(--secondary-color-rgb), .2) 100%;
   --swiper-theme-color: var(--secondary-color);
@@ -159,7 +159,7 @@ Table of content:
 .bg-gradient-1{  background: -moz-linear-gradient(var(--bg-gradient-1)) !important;  background: -webkit-linear-gradient(var(--bg-gradient-1)) !important;background: linear-gradient(var(--bg-gradient-1)) !important;
 }
 /* base color */
-.id-color{color:var(--primary-color)}
+.id-color{color:var(--white-color)}
 .rounded-1{
   border-radius: var(--rounded-1) !important;
   -moz-border-radius: var(--rounded-1) !important;
@@ -200,7 +200,7 @@ body.dark-scheme {
 
 a,
 a:hover {
-  color:var(--body-font-color);
+  color:var(--red-color);
   text-decoration: none;
   outline: none;
 }
@@ -209,7 +209,7 @@ a:hover {
 .dark-scheme a:hover,
 .text-light a,
 .text-light a:hover {
-  color:var(--body-font-color-dark);
+  color:var(--red-color);
   text-decoration: none;
   outline: none;
 }
@@ -897,7 +897,7 @@ header.header-light #mainmenu a {
   position: absolute;
   left: 0;  
   bottom: 20px;
-  background: var(--primary-color);
+  background: var(--red-color);
 }
 
 #mainmenu li a.active:before{
@@ -4886,11 +4886,11 @@ ol.ol-style-1.c2 li::before{
 
 .de_tab.tab_methods.style-2.light .de_nav li span {
   background: #eee;
-  color: #707070;
+  color: #707070; 
 }
 
 .de_tab.tab_methods.style-2 .de_nav li.active span {
-  border: solid 2px rgba(255, 255, 255, .8);
+  border: solid 2px #bc0914;
   color: #222;
 }
 
@@ -7131,11 +7131,11 @@ footer .tiny-border span {
 }
 
 .gradient-edge-top.color{
-  background: linear-gradient(180deg, rgba(var(--primary-color-rgb), 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+  background: linear-gradient(180deg, rgba(var(--secondary-color-rgb), 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
 }
 
 .gradient-edge-bottom.color{
-  background: linear-gradient(0deg, rgba(var(--primary-color-rgb), 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+  background: linear-gradient(0deg, rgba(var(--secondary-color-rgb), 1) 0%, rgba(var(--primary-color-rgb), 0) 100%);
 }
 
 .de-gradient-edge-bottom.light {
@@ -7752,7 +7752,7 @@ footer .tiny-border span {
 .hover:hover .hover-jello{animation-name: jello; animation-duration: 1.5s;}
 .hover:hover .hover-bounce{animation-name: bounce; animation-duration: 1.5s;}
 
-.radial-gradient-color{background: radial-gradient(circle,rgba(var(--primary-color-rgb), 0) 50%, rgba(var(--primary-color-rgb), 1) 100%);}
+.radial-gradient-color{background: radial-gradient(circle,rgba(var(--bg-dark-1-rgb), 0) 50%, rgba(var(--bg-dark-1-rgb), 1) 100%);}
 
 .inline-block{display: inline-block;}
 
@@ -8037,7 +8037,7 @@ footer .tiny-border span {
   opacity: 1;
 }
 .de-tab.pill .d-tab-nav .active-tab{
-  background: var(--primary-color);
+  background: var(--secondary-color);
   color:#ffffff;
   border:none;
   opacity: 1;
@@ -12398,7 +12398,7 @@ img {
 
   header.header-mobile #mainmenu li ul li a.menu-item {
     display: block;
-    border-bottom: solid 1px var(--bg-dark-3);
+    border-bottom: solid 1px var(--red-color);
   }
 
   header.header-mobile #mainmenu li ul li:last-child {
