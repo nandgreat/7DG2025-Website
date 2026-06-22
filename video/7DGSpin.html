@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@keyframes spinY {
+  from { transform: rotateX(-12deg) rotateY(0deg); }
+  to   { transform: rotateX(-12deg) rotateY(360deg); }
+}
+</style>
+</helmet>
+<div style="display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;background:transparent;">
+  <div style="perspective:1600px;">
+    <div style="transform-style:preserve-3d;animation:spinY 9s linear infinite;">
+      {{ stack }}
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:640,&quot;height&quot;:421}}">
+class Component extends DCLogic {
+  renderVals() {
+    const src = 'uploads/7DG_2026_white.png';
+    const W = 600, H = 381; // keep aspect 967x614
+    const layers = 26;          // thickness layers
+    const depth = 1.6;          // px per layer
+    const front = (layers - 1) * depth / 2;
+
+    const nodes = [];
+    for (let i = 0; i < layers; i++) {
+      const z = i * depth - front;
+      const t = i / (layers - 1); // 0 back -> 1 front
+      // edge layers darker to read as extruded metal; faces bright
+      let bright;
+      if (i === layers - 1) bright = 1;          // front face
+      else if (i === 0)     bright = 0.62;        // back face
+      else                  bright = 0.30 + 0.18 * Math.sin(t * Math.PI); // mid edge
+      const isFace = (i === layers - 1 || i === 0);
+      nodes.push(React.createElement('img', {
+        key: i,
+        src,
+        width: W,
+        height: H,
+        style: {
+          position: i === 0 ? 'relative' : 'absolute',
+          top: 0, left: 0,
+          transform: `translateZ(${z}px)`,
+          filter: `brightness(${bright})`,
+          // subtle warm/cool tint on the body for a metallic feel
+          mixBlendMode: 'normal',
+          backfaceVisibility: 'visible',
+          userSelect: 'none',
+          WebkitUserDrag: 'none'
+        }
+      }));
+    }
+    return { stack: React.createElement('div', {
+      style: { position: 'relative', width: W, height: H, transformStyle: 'preserve-3d' }
+    }, nodes) };
+  }
+}
+</script>
+</body>
+</html>
