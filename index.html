@@ -57,7 +57,7 @@
                                         <li><a class="menu-item active" href="#section-hero">Home</a></li>
                                         <li><a class="menu-item" href="#section-about">About</a></li>
                                         <li><a class="menu-item" href="#section-why-attend">Ministers</a></li>
-                                        <li><a class="menu-item" href="#section-speakers">Music</a></li>
+                                        <li><a class="menu-item" href="#section-speakers">Music Ministers</a></li>
                                         <li><a class="menu-item" href="#section-schedule">Schedule</a></li>
                                         <li><a class="menu-item" href="#section-engage">Engage</a></li>
                                         <li><a class="menu-item" href="#section-venue">Venue</a></li>
@@ -825,8 +825,8 @@
                                     <li>Worship and the Word from anywhere</li>
                                     <li>Replays available after each session</li>
                                 </ul>
-                                <a class="btn-main fx-slide w-100" href="https://www.youtube.com/@COZAGLOBAL"
-                                    target="_blank"><span>Watch Live</span></a>
+                                <a class="btn-main fx-slide w-100" href="#" id="watchLiveBtn"
+                                    onclick="openWatchLive(event)"><span>Watch Live</span></a>
                             </div>
                         </div>
                     </div>
@@ -866,29 +866,107 @@
                     </div>
                 </div>
 
+                <div class="row g-4 justify-content-center mb-5">
+                    <div class="col-lg-6 col-md-8 text-center">
+                        <div class="location-image-wrapper">
+                            <img src="images/misc/guzape_church.jpg" class="w-100 wow scale-in-mask"
+                                alt="Guzape Church (HQ)">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">Guzape Church (HQ)</h5>
+                                <p><i class="icofont-google-map"></i>COZA Auditorium, Guzape Hills, Asokoro Extension,
+                                    Abuja</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">Guzape Church (HQ)</h4>
+                        <a href="https://maps.app.goo.gl/AvFxsxARChPNsvEB8" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
+                    </div>
+                </div>
+
                 <div class="row g-4">
-                    <div class="col-sm-4">
-                        <img src="images/misc/guzape_church.jpg" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="location-image-wrapper">
+                            <img src="images/misc/lagos_church.png" class="w-100 wow scale-in-mask" alt="COZA Lagos">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">COZA Lagos</h5>
+                                <p><i class="icofont-google-map"></i>20 Mobolaji Bank Anthony Way, Maryland, Lagos</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">COZA Lagos</h4>
+                        <a href="https://maps.app.goo.gl/2EZSr39AMffyy53R7" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
                     </div>
 
-                    <div class="col-sm-4">
-                        <img src="images/misc/lagos_church.png" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="location-image-wrapper">
+                            <img src="images/misc/port_harcourt.png" class="w-100 wow scale-in-mask"
+                                alt="COZA Port Harcourt">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">COZA Port Harcourt</h5>
+                                <p><i class="icofont-google-map"></i>The Atrium, 28 Stadium Rd, Rumuomasi, Port Harcourt
+                                    500101, Rivers</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">COZA Port Harcourt</h4>
+                        <a href="https://maps.app.goo.gl/pCmTRNYT6Dowb7Pr7" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
                     </div>
 
-                    <div class="col-sm-4">
-                        <img src="images/misc/port_harcourt.png" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="location-image-wrapper">
+                            <img src="images/misc/ilorin_church.jpeg" class="w-100 wow scale-in-mask" alt="COZA Ilorin">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">COZA Ilorin</h5>
+                                <p><i class="icofont-google-map"></i>Pipe Line Road, Ilorin 240222, Kwara</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">COZA Ilorin</h4>
+                        <a href="https://maps.app.goo.gl/oM4R3m3KzqH7s5jv7" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
                     </div>
 
-                    <div class="col-sm-4">
-                        <img src="images/misc/ilorin_church.jpeg" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="location-image-wrapper">
+                            <img src="images/misc/manchester_church.jpeg" class="w-100 wow scale-in-mask"
+                                alt="COZA Manchester">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">COZA Manchester</h5>
+                                <p><i class="icofont-google-map"></i>Printworks, 27 Withy Grove, Manchester M4 2BS,
+                                    United Kingdom</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">COZA Manchester</h4>
+                        <a href="https://maps.app.goo.gl/d2uqm249o1L263Gp8" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
                     </div>
 
-                    <div class="col-sm-4">
-                        <img src="images/misc/manchester_church.jpeg" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="location-image-wrapper">
+                            <img src="images/misc/coza_birmingham.jpg" class="w-100 wow scale-in-mask"
+                                alt="COZA Birmingham">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">COZA Birmingham</h5>
+                                <p><i class="icofont-google-map"></i>Star City Leisure Park, Watson Rd, Nechells,
+                                    Birmingham B7 5SA, United Kingdom</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">COZA Birmingham</h4>
+                        <a href="https://maps.app.goo.gl/AvFxsxARChPNsvEB8" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
                     </div>
 
-                    <div class="col-sm-4">
-                        <img src="images/misc/birmingham.jpeg" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                        <div class="location-image-wrapper">
+                            <!-- Temporary image for London until provided -->
+                            <img src="images/misc/coza_london.jpeg" class="w-100 wow scale-in-mask" alt="COZA London">
+                            <div class="location-address-overlay">
+                                <h5 class="text-white mb-2">COZA London</h5>
+                                <p><i class="icofont-google-map"></i>30 Tottenham Ct Rd, London W1T 1BX, UK</p>
+                            </div>
+                        </div>
+                        <h4 class="mb-2 mt-3">COZA London</h4>
+                        <a href="https://maps.app.goo.gl/1UDCNjJVW4xHxrzh7" target="_blank"
+                            class="btn-main btn-line fx-slide mt-2"><span>Locate Church</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -1025,8 +1103,8 @@
                     </div>
 
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay=".8s">
-                        <div class="form-check d-flex justify-content-center mb-2">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="updatesCheck" checked>
+                        <div class="form-check d-inline-block text-start mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="updatesCheck" checked>
                             <label class="form-check-label" for="updatesCheck">
                                 Keep me updated on 7DG news and announcements
                             </label>
@@ -1084,12 +1162,72 @@
     </footer>
     <!-- footer end -->
 
+    <!-- Watch Live modal begin -->
+    <div id="watchLiveModal" class="wl-modal" role="dialog" aria-modal="true" aria-labelledby="wlTitle">
+        <div class="wl-overlay" onclick="closeWatchLive()"></div>
+        <div class="wl-dialog" role="document">
+            <button type="button" class="wl-close" aria-label="Close" onclick="closeWatchLive()">&times;</button>
+            <div class="text-center mb-4">
+                <div class="subtitle mb-2">We're Live</div>
+                <h3 class="mb-1">Watch 7 Days of Glory Live</h3>
+                <p class="mb-0 op-7">Choose a platform below to join the service streaming now.</p>
+            </div>
+
+            <div class="wl-channels">
+                <!-- YouTube channel 1 -->
+                <a class="wl-channel" href="https://www.youtube.com/@COZAGLOBAL" target="_blank" rel="noopener">
+                    <span class="wl-icon yt"><i class="fa-brands fa-youtube"></i></span>
+                    <span class="wl-info">
+                        <span class="wl-name">COZA Global</span>
+                        <span class="wl-platform">YouTube</span>
+                    </span>
+                    <span class="wl-live"><span class="wl-dot"></span>LIVE</span>
+                </a>
+
+                <!-- YouTube channel 2 -->
+                <a class="wl-channel" href="https://www.youtube.com/@COZATV" target="_blank" rel="noopener">
+                    <span class="wl-icon yt"><i class="fa-brands fa-youtube"></i></span>
+                    <span class="wl-info">
+                        <span class="wl-name">COZA TV</span>
+                        <span class="wl-platform">YouTube</span>
+                    </span>
+                    <span class="wl-live"><span class="wl-dot"></span>LIVE</span>
+                </a>
+
+                <!-- Facebook channel -->
+                <a class="wl-channel" href="https://www.facebook.com/cozaglobal" target="_blank" rel="noopener">
+                    <span class="wl-icon fb"><i class="fa-brands fa-facebook-f"></i></span>
+                    <span class="wl-info">
+                        <span class="wl-name">COZA Global</span>
+                        <span class="wl-platform">Facebook</span>
+                    </span>
+                    <span class="wl-live"><span class="wl-dot"></span>LIVE</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Watch Live modal end -->
+
     <!-- Javascript Files
     ================================================== -->
     <script src="js/vendors.js"></script>
     <script src="js/designesia.js"></script>
     <script src="js/countdown-custom.js"></script>
     <script src="js/custom-marquee.js"></script>
+    <script>
+        function openWatchLive(e) {
+            if (e) e.preventDefault();
+            document.getElementById('watchLiveModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeWatchLive() {
+            document.getElementById('watchLiveModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeWatchLive();
+        });
+    </script>
 
 </body>
 

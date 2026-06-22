@@ -15142,3 +15142,64 @@ img {
     width: auto;
   }
 }
+/* Viewing Center Hover Effects */
+.location-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.location-image-wrapper img {
+    transition: transform 0.5s ease;
+    margin-bottom: 0 !important;
+}
+
+.location-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.location-address-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 40%, transparent 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    text-align: left;
+}
+
+.location-address-overlay p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #eee;
+}
+
+.location-address-overlay i {
+    color: var(--primary-color, #ffaa00);
+    margin-right: 5px;
+}
+
+.location-image-wrapper:hover .location-address-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile View adjustments */
+@media (max-width: 768px) {
+    .location-address-overlay {
+        opacity: 1; /* Always visible on mobile */
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    }
+}
