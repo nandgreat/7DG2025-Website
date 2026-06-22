@@ -1,0 +1,200 @@
+/* =====================================================================
+   7DG 2026 — Visual Upgrade Layer
+   Polish on top of the base AIvent theme to match the 2026 banner:
+   vibrant magenta → violet → blue gradients, richer cards & badges.
+   ===================================================================== */
+
+:root {
+    --accent-magenta: #C026D3;
+    --accent-violet: #7C3AED;
+    --accent-blue: #2563EB;
+    --accent-pink: #EC4899;
+    --grad-brand: linear-gradient(115deg, #EC4899 0%, #C026D3 38%, #7C3AED 70%, #2563EB 100%);
+}
+
+/* ---- Animated brand gradient text helper ---- */
+.text-gradient {
+    background: var(--grad-brand);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brandShine 6s linear infinite;
+}
+
+@keyframes brandShine {
+    to { background-position: 200% center; }
+}
+
+/* ---- Soft glow accents that echo the banner light streaks ---- */
+.glow-orbs::before,
+.glow-orbs::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .45;
+    z-index: 0;
+    pointer-events: none;
+}
+.glow-orbs > .container { position: relative; z-index: 2; }
+.glow-orbs::before {
+    width: 480px; height: 480px;
+    background: var(--accent-magenta);
+    top: -120px; left: -120px;
+}
+.glow-orbs::after {
+    width: 520px; height: 520px;
+    background: var(--accent-blue);
+    bottom: -160px; right: -140px;
+}
+
+/* ---- Hero refinements ---- */
+#section-hero h1 {
+    letter-spacing: -1px;
+    text-shadow: 0 8px 40px rgba(192, 38, 211, .35);
+}
+
+/* Service-time pills (Evening 6PM / Morning 6AM / Sunday 9AM) like the banner */
+.service-times {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+.service-pill {
+    min-width: 120px;
+    padding: 14px 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .06);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.service-pill:hover {
+    transform: translateY(-6px);
+    border-color: rgba(var(--primary-color-rgb), .7);
+    box-shadow: 0 18px 50px rgba(var(--primary-color-rgb), .35);
+}
+.service-pill .label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .7;
+    margin-bottom: 4px;
+}
+.service-pill .time {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    background: var(--grad-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ---- Buttons: gradient fill + lift ---- */
+.btn-main {
+    background: var(--grad-brand) !important;
+    background-size: 180% auto !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(var(--primary-color-rgb), .35);
+    transition: background-position .5s ease, transform .3s ease, box-shadow .3s ease;
+}
+.btn-main:hover {
+    background-position: right center !important;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(var(--primary-color-rgb), .5);
+}
+.btn-main.btn-line {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, .35) !important;
+    box-shadow: none;
+}
+.btn-main.btn-line:hover {
+    border-color: var(--accent-magenta) !important;
+    background: rgba(var(--primary-color-rgb), .12) !important;
+}
+
+/* ---- Section heading accents ---- */
+.subtitle {
+    color: var(--accent-pink);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* ---- Speaker / minister cards ---- */
+.spk-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.spk-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(var(--primary-color-rgb), .6);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, .55), 0 0 0 1px rgba(var(--primary-color-rgb), .3);
+}
+.spk-card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+.spk-card:hover img { transform: scale(1.06); }
+
+/* Initials avatar for ministers without a photo */
+.spk-avatar {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fff;
+    background: var(--grad-brand);
+    background-size: 200% 200%;
+    animation: brandShine 8s ease infinite alternate;
+}
+.spk-body {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 22px 20px 18px;
+    background: linear-gradient(to top, rgba(8,6,18,.92) 0%, rgba(8,6,18,.55) 55%, transparent 100%);
+    z-index: 2;
+}
+.spk-body h4, .spk-body h3 { margin: 0; }
+.spk-body p { margin: 2px 0 0; opacity: .75; font-size: 14px; }
+
+/* ---- Schedule tabs polish ---- */
+.de-tab .d-tab-nav li.active-tab,
+.de-tab .d-tab-nav li:hover {
+    color: var(--accent-pink);
+}
+.de-tab .d-tab-nav li.active-tab h3 { color: #fff; }
+
+/* ---- FAQ + cards rounded consistency ---- */
+.rounded-1 { border-radius: 16px !important; }
+
+/* ---- Marquee tint to brand ---- */
+.bg-color { background: var(--accent-magenta) !important; }
+.bg-color-2 { background: var(--accent-violet) !important; }
+
+/* ---- Footer subtle top border ---- */
+footer { border-top: 1px solid rgba(255,255,255,.06); }
+
+/* ---- Responsive ---- */
+@media (max-width: 575px) {
+    .service-pill { min-width: 90px; padding: 10px 14px; }
+    .service-pill .time { font-size: 20px; }
+    .spk-avatar { font-size: 44px; }
+}
